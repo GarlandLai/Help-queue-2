@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import c from './../constants';
 
 function Ticket(props){
   var myStyle = {
@@ -8,7 +9,7 @@ function Ticket(props){
     fontFamily: 'monospace',
     fontSize: '24px',
   };
-  
+
   function handleSavingSelectedTicket(ticketId) {
     const { dispatch } = props;
     const action = {
