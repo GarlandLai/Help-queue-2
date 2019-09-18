@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 import { connect } from 'react-redux';
 
 function Ticket(props){
@@ -9,9 +8,7 @@ function Ticket(props){
     fontFamily: 'monospace',
     fontSize: '24px',
   };
-  var myOtherStyle = {
-    fontSize: '15px',
-  };
+  
   function handleSavingSelectedTicket(ticketId) {
     const { dispatch } = props;
     const action = {
@@ -22,11 +19,11 @@ function Ticket(props){
   }
 
   const ticketInformation =
-  <div>
-    <h3>{props.location} - {props.names}</h3>
-    <h4>{props.formattedWaitTime} ago</h4>
-    <hr/>
-  </div>;
+    <div style={myStyle}>
+      <h3>{props.location} - {props.names}</h3>
+      <h4>{props.formattedWaitTime} ago</h4>
+      <hr/>
+    </div>;
   if (props.currentRouterPath === '/admin') {
     return (
       <div onClick={() => {handleSavingSelectedTicket(props.ticketId);}}>
